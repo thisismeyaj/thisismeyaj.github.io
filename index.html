@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meyaj · Same-day virtual staging, renderings &amp; CAD</title>
+<meta name="description" content="Same-day virtual staging for real estate agents, from $15 per photo with instant pricing. Plus product renderings, CAD drafting and architectural visuals.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='%23c9a14a'%3E%3Crect x='4' y='52' width='56' height='8'/%3E%3Crect x='10' y='44' width='44' height='8'/%3E%3Crect x='16' y='36' width='32' height='8'/%3E%3Crect x='22' y='28' width='20' height='8'/%3E%3Crect x='25' y='16' width='14' height='12'/%3E%3C/g%3E%3Crect x='29' y='20' width='6' height='8' fill='%230e1412'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --obsidian: #0e1412; --basalt: #17201d; --stone: #2a3530; --bone: #f1ead9; --mist: #a9b3ac;
+    --jade: #3fb08a; --jade-deep: #1f6f56; --gold: #c9a14a; --gold-dim: #8a6d2e; --clay: #b5643c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--obsidian); color: var(--bone); font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; overflow-x: hidden; }
+  a { color: var(--gold); }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; letter-spacing: .01em; }
+  .wrap { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+
+  /* Stepped "fret" band, inspired by Maya temple friezes */
+  .fret { height: 14px; opacity: .55; background:
+      linear-gradient(90deg, var(--gold) 0 50%, transparent 50%) 0 0 / 28px 4px repeat-x,
+      linear-gradient(90deg, transparent 0 25%, var(--gold) 25% 75%, transparent 75%) 0 5px / 28px 4px repeat-x,
+      linear-gradient(90deg, transparent 0 50%, var(--gold) 50%) 0 10px / 28px 4px repeat-x; }
+
+  header { background: var(--basalt); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+  .logo { display: flex; align-items: center; gap: 12px; color: var(--bone); text-decoration: none; }
+  .logo b { font-family: Georgia, serif; letter-spacing: .28em; font-size: 22px; color: var(--gold); }
+  nav a { margin-left: 18px; color: var(--mist); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--gold); }
+  @media (max-width: 640px) { nav a { margin: 0 14px 0 0; } }
+
+  .hero { padding: 60px 0 46px; max-width: 760px; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--jade-deep); color: #fff; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 15px; padding: 8px 16px; border-radius: 4px; margin-bottom: 18px; }
+  .badge::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #9ff0cf; box-shadow: 0 0 10px #9ff0cf; }
+  .hero h1 { font-size: clamp(34px, 5.4vw, 56px); line-height: 1.08; margin: 0 0 16px; }
+  .hero h1 em { color: var(--jade); font-style: normal; }
+  .hero p { font-size: 20px; color: var(--mist); margin: 0 0 26px; }
+  .cta { display: inline-block; background: var(--gold); color: var(--obsidian); padding: 14px 22px; border-radius: 6px; text-decoration: none; font-weight: 700; border: 0; font-size: 17px; cursor: pointer; }
+  .cta.ghost { background: transparent; color: var(--gold); border: 1px solid var(--gold-dim); }
+
+  section { padding: 54px 0; }
+  h2 { font-size: 30px; margin: 0 0 8px; color: var(--gold); }
+  .sub { color: var(--mist); margin: 0 0 26px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .card { background: var(--basalt); border: 1px solid var(--stone); border-top: 3px solid var(--jade-deep); border-radius: 6px; padding: 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 19px; color: var(--bone); }
+  .card p { margin: 0; color: var(--mist); }
+  .card .tag { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--clay); }
+  .card.quote { border-top-color: var(--clay); }
+  .num { display: inline-grid; place-items: center; width: 34px; height: 34px; background: var(--gold); color: var(--obsidian); font-weight: 800; margin-bottom: 10px; padding-top: 8px;
+    clip-path: polygon(0 100%, 0 66%, 16% 66%, 16% 33%, 33% 33%, 33% 0, 67% 0, 67% 33%, 84% 33%, 84% 66%, 100% 66%, 100% 100%); }
+
+  /* Instant price calculator */
+  .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--basalt); border: 1px solid var(--gold-dim); border-radius: 8px; overflow: hidden; }
+  @media (max-width: 760px) { .calc { grid-template-columns: 1fr; } }
+  .calc > div { padding: 26px; }
+  .calc .right { background: #121a17; border-left: 1px solid var(--stone); }
+  @media (max-width: 760px) { .calc .right { border-left: 0; border-top: 1px solid var(--stone); } }
+  .qty { display: flex; align-items: center; gap: 10px; margin: 8px 0 18px; }
+  .qty button { width: 46px; height: 46px; border-radius: 6px; border: 1px solid var(--gold-dim); background: transparent; color: var(--gold); font-size: 24px; cursor: pointer; }
+  .qty input { width: 90px; height: 46px; text-align: center; font-size: 24px; font-weight: 700; background: var(--obsidian); color: var(--bone); border: 1px solid var(--stone); border-radius: 6px; }
+  .tiers { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .tiers td { padding: 7px 8px; border-bottom: 1px solid var(--stone); color: var(--mist); }
+  .tiers td:last-child { text-align: right; }
+  .tiers tr.on td { color: var(--obsidian); background: var(--gold); font-weight: 700; }
+  label.check { display: flex; gap: 10px; align-items: center; margin-top: 16px; color: var(--mist); cursor: pointer; }
+  label.check input { width: 18px; height: 18px; accent-color: var(--gold); }
+  .total { font-family: Georgia, serif; font-size: 52px; color: var(--gold); line-height: 1; margin: 6px 0; }
+  .breakdown { color: var(--mist); font-size: 15px; min-height: 48px; }
+  .promo { display: inline-block; background: rgba(63,176,138,.15); color: var(--jade); border: 1px solid var(--jade-deep); border-radius: 4px; padding: 3px 10px; font-size: 13px; font-weight: 700; }
+
+  .styles { display: flex; flex-wrap: wrap; gap: 10px; }
+  .styles span { background: var(--basalt); border: 1px solid var(--gold-dim); border-radius: 4px; padding: 8px 16px; }
+  details { background: var(--basalt); border: 1px solid var(--stone); border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--mist); margin: 10px 0 0; }
+  .legal h3 { font-size: 18px; margin: 22px 0 6px; color: var(--bone); }
+  .legal p { color: var(--mist); font-size: 15px; margin: 0; }
+  footer { background: var(--basalt); padding: 30px 0 46px; color: var(--mist); font-size: 14px; }
+  .small { font-size: 13px; color: var(--mist); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">
+      <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
+        <g fill="#c9a14a"><rect x="4" y="52" width="56" height="8"/><rect x="10" y="44" width="44" height="8"/><rect x="16" y="36" width="32" height="8"/><rect x="22" y="28" width="20" height="8"/><rect x="25" y="16" width="14" height="12"/><rect x="23" y="13" width="18" height="3"/></g>
+        <rect x="29" y="20" width="6" height="8" fill="#0e1412"/><rect x="30" y="36" width="4" height="24" fill="#8a6d2e"/>
+      </svg>
+      <b>MEYAJ</b>
+    </a>
+    <nav><a href="#price">Instant price</a><a href="#how">How it works</a><a href="#services">Design services</a><a href="#faq">FAQ</a></nav>
+  </div>
+  <div class="fret"></div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="badge">Same-day delivery</div>
+    <h1>Empty listings, <em>furnished today.</em></h1>
+    <p>Virtual staging for real estate agents. Email us photos of empty rooms and get them back the same day, realistically furnished and labeled "Virtually Staged". See your price instantly: no quotes, no waiting.</p>
+    <a class="cta" href="#price">Get my price</a>
+  </div>
+</main>
+
+<div class="fret"></div>
+<main class="wrap">
+  <section id="price">
+    <h2>Your price, instantly</h2>
+    <p class="sub">Choose how many photos. The more you send, the less each one costs.</p>
+    <div class="calc">
+      <div>
+        <strong>How many photos?</strong>
+        <div class="qty">
+          <button type="button" id="minus" aria-label="Fewer photos">−</button>
+          <input id="n" type="number" min="1" max="200" value="5" inputmode="numeric" aria-label="Number of photos">
+          <button type="button" id="plus" aria-label="More photos">+</button>
+        </div>
+        <table class="tiers" id="tiers"></table>
+        <label class="check"><input type="checkbox" id="newc" checked> First order with us? <span class="promo">First photo free</span></label>
+        <p class="small" style="margin-top:8px">New-customer promotion for virtual staging only. One free photo per customer.</p>
+      </div>
+      <div class="right">
+        <div class="small">Your total</div>
+        <div class="total" id="total">$0</div>
+        <div class="breakdown" id="breakdown"></div>
+        <a class="cta" id="send" href="#" style="margin-top:14px">Email my photos</a>
+        <p class="small" style="margin-top:12px">Opens an email to us with everything filled in. Just attach your photos and add the property address. You pay only after you see your previews.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <p class="sub">Three steps, all by email. Most orders are delivered the same day.</p>
+    <div class="grid">
+      <div class="card"><div class="num">1</div><h3>Send your photos</h3><p>Click "Email my photos", attach photos of empty rooms, and add the property address and a style.</p></div>
+      <div class="card"><div class="num">2</div><h3>Get previews the same day</h3><p>We furnish every photo and quality-check it, then email you watermarked previews with a secure payment link.</p></div>
+      <div class="card"><div class="num">3</div><h3>Pay and download</h3><p>Pay by card through Stripe. The full-resolution photos arrive in your inbox automatically, with your originals.</p></div>
+    </div>
+    <h3 style="margin:30px 0 12px">Styles</h3>
+    <div class="styles"><span>Modern</span><span>Coastal</span><span>Luxury</span><span>Mediterranean</span></div>
+    <div class="grid" style="margin-top:26px">
+      <div class="card"><h3>Always labeled</h3><p>Every photo carries a "Virtually Staged" label, so your listings stay transparent with buyers and MLS rules.</p></div>
+      <div class="card"><h3>Furniture only</h3><p>We only add furniture and decor. We never change walls, windows, views, fixtures or the condition of the property.</p></div>
+      <div class="card"><h3>Free redos</h3><p>Not quite right? Reply with what to change and we'll redo it at no charge.</p></div>
+    </div>
+  </section>
+</main>
+
+<div class="fret"></div>
+<main class="wrap">
+  <section id="services">
+    <h2>Design services</h2>
+    <p class="sub">Custom projects, quoted individually. Email us what you need and we'll reply with a quote and timeline.</p>
+    <div class="grid">
+      <div class="card quote"><h3>Product renderings</h3><p>Photorealistic 3D renders of products for listings, catalogs, ads and pitch decks.</p><span class="tag">Request a quote</span></div>
+      <div class="card quote"><h3>CAD drafting</h3><p>AutoCAD drawings, floor plans and drafting from sketches, measurements or existing plans.</p><span class="tag">Request a quote</span></div>
+      <div class="card quote"><h3>Architectural visuals</h3><p>Exterior and interior renderings of planned or renovated spaces, before anything is built.</p><span class="tag">Request a quote</span></div>
+      <div class="card quote"><h3>Other digital work</h3><p>Floor plan cleanup, photo editing and other design tasks. Just ask.</p><span class="tag">Request a quote</span></div>
+    </div>
+    <p style="margin-top:22px"><a class="cta ghost" href="mailto:meyaj.studio@gmail.com?subject=Quote%20request">Request a quote</a></p>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <details><summary>How fast will I get my staged photos?</summary><p>Same day for most orders. Previews usually arrive within hours, and the full photos arrive automatically right after you pay.</p></details>
+    <details><summary>When do I pay?</summary><p>After you see your watermarked previews. You pay securely by card through Stripe, and the full-resolution photos are emailed to you automatically.</p></details>
+    <details><summary>What photos work best?</summary><p>Well-lit photos of empty interior rooms, as JPEG, PNG or WebP. On iPhone, set Settings &gt; Camera &gt; Formats to "Most Compatible".</p></details>
+    <details><summary>Can you remove damage or change the room?</summary><p>No. We only add furniture and decor, so buyers see the property as it really is.</p></details>
+    <details><summary>Do I need to disclose virtual staging?</summary><p>Yes. Most MLSs and many states require it. Every photo is labeled, and we include your originals.</p></details>
+    <details><summary>How does the first-photo-free offer work?</summary><p>It's a new-customer promotion for virtual staging: on your first order, one photo is free. It doesn't apply to design services.</p></details>
+  </section>
+
+  <section class="legal" id="terms">
+    <h2>Terms &amp; privacy</h2>
+    <h3>Your files</h3>
+    <p>By sending photos or files, you confirm you own them or have permission to use them. We use them only to complete your order. We never sell or share them for any other purpose, and we delete them on request.</p>
+    <h3>How we make staged images</h3>
+    <p>We use AI image tools, including Google's, to add furniture, followed by an automated quality check. Staged images include an invisible digital watermark from the AI provider and a visible "Virtually Staged" label.</p>
+    <h3>Your listing</h3>
+    <p>You're responsible for disclosing virtual staging in your listings as your MLS and local rules require, and for keeping the label on the photos.</p>
+    <h3>Payment</h3>
+    <p>Prices are in US dollars. Virtual staging is priced per photo by order size, as shown above. Design services are quoted before any work begins. Payments are processed securely by Stripe. We don't see or store your card details.</p>
+    <h3>Contact</h3>
+    <p><a href="mailto:meyaj.studio@gmail.com">meyaj.studio@gmail.com</a></p>
+  </section>
+</main>
+
+<div class="fret"></div>
+<footer>
+  <div class="wrap">© 2026 Meyaj · Same-day virtual staging &amp; digital design services · <a href="#terms">Terms &amp; privacy</a></div>
+</footer>
+
+<script>
+  // KEEP IN SYNC with lib/billing/pricing.ts (TIERS) in the Meyaj app.
+  var TIERS = [
+    { min: 1, max: 4, usd: 15 },
+    { min: 5, max: 10, usd: 13 },
+    { min: 11, max: 20, usd: 12 },
+    { min: 21, max: Infinity, usd: 10 }
+  ];
+  var EMAIL = "meyaj.studio@gmail.com";
+  var n = document.getElementById("n"), newc = document.getElementById("newc");
+
+  function tierFor(q) { for (var i = 0; i < TIERS.length; i++) if (q >= TIERS[i].min && q <= TIERS[i].max) return TIERS[i]; return TIERS[0]; }
+  function label(t) { return t.max === Infinity ? t.min + "+ photos" : t.min + "–" + t.max + " photos"; }
+
+  function render() {
+    var q = Math.max(1, Math.min(200, parseInt(n.value, 10) || 1));
+    var t = tierFor(q);
+    var free = newc.checked ? 1 : 0;
+    var total = (q - free) * t.usd;
+    document.getElementById("tiers").innerHTML = TIERS.map(function (x) {
+      return '<tr class="' + (x === t ? "on" : "") + '"><td>' + label(x) + "</td><td>$" + x.usd + " per photo</td></tr>";
+    }).join("");
+    document.getElementById("total").textContent = "$" + total;
+    document.getElementById("breakdown").innerHTML =
+      q + " photo" + (q === 1 ? "" : "s") + " × $" + t.usd + (free ? "<br>− $" + t.usd + " first photo free" : "") + "<br><strong style='color:#3fb08a'>Delivered the same day</strong>";
+    var body = "Hi Meyaj,\n\nI'd like " + q + " photo" + (q === 1 ? "" : "s") + " virtually staged (estimate: $" + total + (free ? ", first photo free" : "") + ").\n\n" +
+      "Property address: \nStyle (Modern, Coastal, Luxury or Mediterranean): \n\nMy photos are attached.\n\nThanks!";
+    document.getElementById("send").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Virtual staging: " + q + " photo" + (q === 1 ? "" : "s")) + "&body=" + encodeURIComponent(body);
+  }
+  document.getElementById("minus").onclick = function () { n.value = Math.max(1, (parseInt(n.value, 10) || 1) - 1); render(); };
+  document.getElementById("plus").onclick = function () { n.value = Math.min(200, (parseInt(n.value, 10) || 0) + 1); render(); };
+  n.oninput = render; newc.onchange = render;
+  render();
+</script>
+</body>
+</html>
